@@ -23,7 +23,7 @@ module tb_elevator;
     // Simulation stimulus
     initial begin
         $dumpfile("elevator.vcd");
-        $dumpvars(0, uut);
+        $dumpvars(0, tb_elevator);
 
         reset = 1; up_req = 0; down_req = 0;
         #10 reset = 0;
@@ -41,7 +41,7 @@ module tb_elevator;
         #40 up_req = 4'b1001;   
         #20 up_req = 4'b0000;
 
-        #200 $finish;           
+        #600 $finish;           
     end
 
     
